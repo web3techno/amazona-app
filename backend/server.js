@@ -1,9 +1,14 @@
 import express from 'express';
 import mongoose from 'mongoose';
+import dotenv from 'dotenv';
 import productRouter from './routers/productRouter.js';
 import userRouter from './routers/userRouter.js';
 
+dotenv.config();
 const app = express();
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
+
 mongoose.connect(process.env.MONGODB_URL || "mongodb+srv://web3tech:web3tech@cluster0.z4br9eo.mongodb.net/amazona", {
     useNewUrlParser: true, 
     // useCreateIndex : true, 
