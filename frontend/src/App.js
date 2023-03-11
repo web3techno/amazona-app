@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import SigninScreen from './screens/SigninScreen';
 import { signOut } from './actions/userActions';
 import RegisterScreen from './screens/RegisterScreen';
+import ShippingAddressScreen from './screens/ShippingAddressScreen';
 
 function App() {
   const cart = useSelector(state => state.cart);
@@ -17,7 +18,6 @@ function App() {
   const signoutHandler = () => {
     dispatch(signOut());
   }
-  console.log('userInfo', userInfo);
   return (
     <BrowserRouter>
       <div className="grid-container">
@@ -50,6 +50,7 @@ function App() {
             <Route path="/product/:id" element={<ProductScreen/>} exact></Route>
             <Route path="/signin" element={<SigninScreen/>}></Route>
             <Route path="/register" element={<RegisterScreen/>}></Route>
+            <Route path="/shipping" element={<ShippingAddressScreen/>}></Route>
             <Route path="/" element={<HomeScreen/>}></Route>
           </Routes>
         </main>
