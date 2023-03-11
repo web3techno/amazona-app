@@ -15,8 +15,8 @@ orderRouter.post('/', isAuth, expressAsyncHandler(async (req, res) => {
             paymentMethod : req.body.paymentMethod,
             itemsPrice : req.body.itemsPrice,
             shippingPrice : req.body.shippingPrice,
-            taxPrice : req.body.itetaxPrice,
-            totalPrice : req.bodtotalPrice.itemsPrice,
+            taxPrice : req.body.taxPrice,
+            totalPrice : req.body.totalPrice,
             user: req.user._id,
         });
         const createdOrder = await order.save();
